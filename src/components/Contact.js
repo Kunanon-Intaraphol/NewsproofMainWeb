@@ -16,6 +16,8 @@ const Contact = () => {
   const [FAI, setFAI] = useState("");
   const [intFAI, setintFAI] = useState("");
   const [TAI, setTAI] = useState("");
+  const [STonlyP, setSTonlyP] = useState("");
+  const [onlyST, setTonlyST] = useState("");
 
   const [loader, setLoader] = useState(false);
 
@@ -58,6 +60,9 @@ const Contact = () => {
         FAI:FAI,
         intFAI:intFAI,
         TAI:TAI,
+        STonlyP:STonlyP,
+        onlyST:onlyST,
+
 
 
       })
@@ -80,6 +85,8 @@ const Contact = () => {
     setFAI("");
     setintFAI("");
     setTAI("");
+    setSTonlyP("");
+    setTonlyST("");
     
   };
 

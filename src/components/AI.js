@@ -36,7 +36,9 @@ const Read = () => {
                     FAI={website.FAI}
                     INTFAI={website.intFAI}
                     TAI={website.TAI}
-                    Status={website.status}/>
+                    Status={website.status}
+                    onlyST={website.onlyST}
+                    STonlyP={website.STonlyP}/>
                     
                 ))
                
@@ -46,11 +48,20 @@ const Read = () => {
     );
 }
 
-const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI}) => {
+const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
 
-    console.log(News + " " + Sentence + " " + FAI + " " + TAI + " " + INTFAI);
+    const data = [
+        { name: onlyST[0], gender: STonlyP[0]  },
+        { name:onlyST[1], gender: STonlyP[1] },
+        { name: onlyST[2], gender: STonlyP[2] },
+      ]
+
+    console.log(News + " " + Sentence + " " + FAI + " " + TAI + " " + INTFAI+ " " + onlyST+ " " + STonlyP);
     if(Status == "read"){
         console.log("inif")
+
+
+        
 
         return(
         <div className="div">
@@ -73,10 +84,25 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI}) => {
             <h4>มีความเสี่ยงที่จะเป็นข่าวปลอม {FAI}%</h4>
 
             <p>
-            {/* <h5>เพิ่มเติม</h5> */}
             <h5>เนื้อหาข่าว</h5>{News}
             </p>
-    
+
+            <div className="AppTable">
+                <table>
+                    <tr>
+                        <th>ประโยคที่มีความคล้ายที่จะเป็นข่าวปลอม</th>
+                        <th style={{borderLeft:"4px solid #3F89F3"}}>เปอร์เซ็นต์</th>
+                    </tr>
+                    {data.map((val, key) => {
+                    return (
+                        <tr key={key}>
+                            <td>{val.gender}</td>
+                            <td style={{borderLeft:"4px solid #3F89F3"}}>{val.name}</td>
+                        </tr>
+                    )
+                    })}
+                </table>
+            </div>
         </div>
         );
     }
