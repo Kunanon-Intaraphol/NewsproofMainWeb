@@ -73,6 +73,8 @@ p{
   position: absolute;  
   top: 95%;
   font-family: 'Mitr', sans-serif;
+  background: #f7f7f7;
+  
 }
   
 table {
@@ -83,13 +85,10 @@ table {
   
 th {
   border-bottom: 4px solid #3F89F3;
-  /* border: 2px solid #3F89F3; */
   font-weight: 600;
 }
   
 td {
   text-align: center;
   font-weight: 400;
-  /* border-left: 2px solid #3F89F3; */
-  /* border-right:2px solid #3F89F3 ; */
 }
