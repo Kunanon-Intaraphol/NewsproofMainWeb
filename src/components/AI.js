@@ -49,12 +49,22 @@ const Read = () => {
 }
 
 const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
+    const data = []
+    let lengthonlyST =  onlyST.length;
+    for(var i=0;i<lengthonlyST;i++){
+        console.log(i);
+        
 
-    const data = [
-        { name: onlyST[0], gender: STonlyP[0]  },
-        { name:onlyST[1], gender: STonlyP[1] },
-        { name: onlyST[2], gender: STonlyP[2] },
-    ]
+        data.push(
+            { name: onlyST[i], gender: STonlyP[i]  },
+        )
+    }
+
+    // const data = [
+    //     { name: onlyST[0], gender: STonlyP[]  },
+    //     { name:onlyST[1], gender: STonlyP[1] },
+    //     { name: onlyST[2], gender: STonlyP[2] },
+    // ]
 
     console.log(News + " " + Sentence + " " + FAI + " " + TAI + " " + INTFAI+ " " + onlyST+ " " + STonlyP);
     if(Status == "read"){
