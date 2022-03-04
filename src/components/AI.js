@@ -28,7 +28,7 @@ const Read = () => {
         <div>
             <div style={{backgroundColor:"#AFD0FF"}}>
             <center>
-            <img src ={Logo} ></img>
+            <img src ={Logo}  style={{height:"60px"}}></img>
             </center>
             </div>
             <center>
