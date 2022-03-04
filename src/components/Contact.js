@@ -51,7 +51,7 @@ const Contact = () => {
     e.preventDefault();
     setLoader(true);
 
-    db.collection("website").doc()
+    db.collection("website").doc("aroi")
       .set({
         startDate: startDate,
         news: news,
@@ -119,7 +119,7 @@ const Contact = () => {
             </div>
       </div>
 
-      <img src ={Logo}></img>
+      <img src ={Logo} ></img>
 
       <h2>ยินดีต้อนรับ</h2>
       <h1>ตรวจสอบข่าวสาร</h1>

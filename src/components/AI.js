@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { CircularProgressbar , buildStyles} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import "./aroi.css";
+import Logo from './icons/LOGO.png'
 
 const Read = () => {
     
@@ -22,13 +23,37 @@ const Read = () => {
             });
         })
     }
-      
+
     return (
         <div>
+            <div style={{backgroundColor:"#AFD0FF"}}>
             <center>
-            <h1>NewsProof</h1> 
+            <img src ={Logo} ></img>
+            </center>
+            </div>
+            <center>
             <h2>โปรดใช้ดุลพินิจของท่านในการตัดสินใจ</h2>
-            </center>   
+            <button style={{    
+            width: "250px",
+            height: "60px",
+            color: "#ebedf1",
+            backgroundColor: '#3F89F3',
+            fontSize:'20px',
+            borderRadius:'10px',
+            position:"absolute",
+            top:"30%",
+            left:"43%"
+            }}
+            onClick={() => window.location.reload(false)}
+            >
+            กดเพื่อรับผลคำตอบ
+            </button>
+            </center>  
+
+            
+
+            
+            
             {
                 info.map((website) => (
                 <Frame News={website.news} 
@@ -49,6 +74,7 @@ const Read = () => {
 }
 
 const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
+
     const data = []
     let lengthonlyST =  onlyST.length;
     for(var i=0;i<lengthonlyST;i++){
@@ -60,13 +86,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
         )
     }
 
-    // const data = [
-    //     { name: onlyST[0], gender: STonlyP[]  },
-    //     { name:onlyST[1], gender: STonlyP[1] },
-    //     { name: onlyST[2], gender: STonlyP[2] },
-    // ]
 
-    console.log(News + " " + Sentence + " " + FAI + " " + TAI + " " + INTFAI+ " " + onlyST+ " " + STonlyP);
     if(Status == "read"){
         console.log("inif")
 
@@ -77,8 +97,9 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
         <div className="div">
             <h3>ผลลัพธ์</h3>
 
-
-            <div style={{ width: 200, height: 200 , position: "absolute" ,top:"45%",left:"25%"}}>
+            <p1>
+            <center>
+            <div style={{ width: 200, height: 200}}>
                  <CircularProgressbar value={INTFAI}  text={`${INTFAI}%`} circleRatio={0.75} circleRatio={0.75} styles={buildStyles({
                     rotation: 1 / 2 + 1 / 8,
                     textColor:"#FD645F",
@@ -89,6 +110,8 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
                     })}
                 />
             </div>
+            </center>
+            </p1>
 
 
             <h4>มีความเสี่ยงที่จะเป็นข่าวปลอม {FAI}%</h4>
@@ -101,13 +124,13 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
                 <table>
                     <tr>
                         <th>ประโยคที่มีความคล้ายที่จะเป็นข่าวปลอม</th>
-                        <th style={{borderLeft:"4px solid #3F89F3"}}>เปอร์เซ็นต์</th>
+                        <th>%</th>
                     </tr>
                     {data.map((val, key) => {
                     return (
                         <tr key={key}>
                             <td>{val.gender}</td>
-                            <td style={{borderLeft:"4px solid #3F89F3"}}>{val.name}</td>
+                            <td>{val.name}</td>
                         </tr>
                     )
                     })}
@@ -119,22 +142,28 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
     }
 
     else{
+        
+    setTimeout(function() {
+        window.location.reload(false);
+    }, 3000)
 
         return(
            
         
             <center>
                 <div className="div">
-    <p style={{fontSize: '20px'}}>โปรดรอสักครู่ ...ระบบกำลังประมวลผล... กรุณากดปุ่มเพื่อรับคำตอบ</p>     
+    <p3 style={{fontSize: '20px'}}>โปรดรอสักครู่ ...ระบบกำลังประมวลผล... กรุณากดปุ่มเพื่อรับคำตอบ</p3>   
 
     <button style={{    
         width: "250px",
         height: "60px",
-        marginTop:'30px',
         color: "#ebedf1",
         backgroundColor: '#3F89F3',
         fontSize:'20px',
-        borderRadius:'5px',
+        borderRadius:'10px',
+        position:"absolute",
+        top:"30%",
+        left:"43%"
         }}
         onClick={() => window.location.reload(false)}
         >
