@@ -44,6 +44,13 @@ h5{
     font-size: 18px
 }
 
+h6{
+  font-family: 'Mitr', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #54545B;
+}
+
 p{
     border: 1px solid  #3F89F3;
     background: #EEEEF2;
@@ -87,11 +94,11 @@ p1{
 
 .AppTable {
   width: 100%;
-  height: 100vh;
+ height: 100vh;
   display: flex;
   justify-content: center;
-  position: absolute;  
-  top: 74%;
+  position: absolute; 
+  top: 74%; 
   font-family: 'Mitr', sans-serif;
   
 }

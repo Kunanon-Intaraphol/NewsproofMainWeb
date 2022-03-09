@@ -85,9 +85,29 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
             { name: onlyST[i], gender: STonlyP[i]  },
         )
     }
+    
+
+    
+    const fai = FAI
+    let predict;
+    let perpre;
+    let TCL;
+    let PCL;
+
+    if(fai > TAI){
+        predict = 'มีความเสี่ยงที่จะเป็นข่าวปลอม';
+        perpre = INTFAI;
+        TCL ="#FD645F";
+        PCL ="#FD645F";
+    } else{
+        predict = 'มีความคล้ายที่จะเป็นข่าวจริง';
+        perpre =Math.round(TAI);
+        TCL = "#3f89f3";
+        PCL = "#3f89f3";
+    }
 
 
-    if(Status == "read"){
+    if(Status == "read"){   
         console.log("inif")
 
 
@@ -100,13 +120,13 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
             <p1>
             <center>
             <div style={{ width: 200, height: 200}}>
-                 <CircularProgressbar value={INTFAI}  text={`${INTFAI}%`} circleRatio={0.75} circleRatio={0.75} styles={buildStyles({
+                 <CircularProgressbar value={perpre}  text={`${perpre}%`} circleRatio={0.75} circleRatio={0.75} styles={buildStyles({
                     rotation: 1 / 2 + 1 / 8,
-                    textColor:"#FD645F",
+                    textColor:TCL,
                     width: "150px", 
                     height: "150px",
                     trailColor: "#909090",
-                    pathColor:"#FD645F"
+                    pathColor:PCL,
                     })}
                 />
             </div>
@@ -114,25 +134,27 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
             </p1>
 
 
-            <h4>มีความเสี่ยงที่จะเป็นข่าวปลอม {FAI}%</h4>
+            <h4 style={{color:TCL}}>{predict}</h4>
 
             <p>
-            <h5>เนื้อหาข่าว</h5>{News}
+            <h5>เนื้อหาข่าว</h5><h6>{News}</h6>
             </p>
-
+            
             <div className="AppTable">
-                <table>
+                <table> 
                     <tr>
                         <th>ประโยคที่มีความคล้ายที่จะเป็นข่าวปลอม</th>
                         <th>%</th>
                     </tr>
                     {data.map((val, key) => {
-                    return (
-                        <tr key={key}>
-                            <td>{val.gender}</td>
-                            <td>{val.name}</td>
-                        </tr>
-                    )
+                    if(fai>TAI){
+                        return (
+                            <tr key={key}>
+                                <td>{val.gender}</td>
+                                <td>{val.name}</td>
+                            </tr>
+                        )
+                    }
                     })}
                 </table>
             </div>
