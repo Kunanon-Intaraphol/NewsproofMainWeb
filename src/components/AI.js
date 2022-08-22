@@ -75,7 +75,6 @@ const Read = () => {
 
 const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
 
-
     const data = []
     let lengthonlyST =  onlyST.length;
     for(var i=0;i<lengthonlyST;i++){
