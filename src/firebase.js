@@ -2,13 +2,14 @@ import firebase from "firebase";
 
 var firebaseApp = firebase.initializeApp({
 
-  apiKey: "AIzaSyDr60DmJMw0C6WM7Sv12xKdz_aduR7WJt4",
-  authDomain: "nsc-newsproof.firebaseapp.com",
-  projectId: "nsc-newsproof",
-  storageBucket: "nsc-newsproof.appspot.com",
-  messagingSenderId: "176552657",
-  appId: "1:176552657:web:52baef8766c22865ff23f0",
-  measurementId: "G-K0MCLQLE99"
+  apiKey: "AIzaSyCOsi35GUFpJpntDLWD7qIM1ue3E-zvN_E",
+  authDomain: "nsc-newsproof-ticta.firebaseapp.com",
+  projectId: "nsc-newsproof-ticta",
+  storageBucket: "nsc-newsproof-ticta.appspot.com",
+  messagingSenderId: "34412984359",
+  appId: "1:34412984359:web:83f8d31a673df105b97602",
+  measurementId: "G-37B84CMV6R"
+  
 });
 
 var db = firebaseApp.firestore();
