@@ -153,7 +153,7 @@ return (
   <form className="form" onSubmit={handleSubmit}>
     <Navbar className="NewsProof-Logo" style={{background :"#B2FFF1"}} expand="lg  ">
       <Navbar.Brand>
-      <img src ={NLogo} style={{height:"45px" ,width:"auto",marginLeft:"60px"}}></img>
+      <img src ={NLogo} style={{height:"45px" ,width:"auto",marginLeft:"10%"}}></img>
       <img src ={Logo} style={{height:"auto" ,width:"250px",marginLeft:"10px"}}></img>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
