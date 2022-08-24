@@ -1,16 +1,17 @@
-import React, { useState} from "react";
+import React, { useState, navigation} from "react";
 import "../app.css";
 import { db } from "../firebase";
 import './Slider.css'
-import BtnSlider from './BtnSlider'
 import dataSlider from './dataSlider'
 import {useNavigate} from "react-router-dom";
 import Logo from './icons/LOGO.png'
+import NLogo from './icons/NLOGO.png'
 import IMG1 from './icons/img1.jpg'
 import { Button, Card , Row, Col, Container , Navbar, Nav, Jumbotron } from 'react-bootstrap'
 
 
 const Contact = () => {
+
   const [startDate, setStartDate] = useState(new Date());
   const [news, setNews] = useState("");
   const [sentence, setSentence] = useState("");
@@ -70,7 +71,6 @@ const Contact = () => {
       })
       .then(() => {
         navigate("./AI");
-        
         setLoader(false);
         alert("Your message has been submitted👍");
       })
@@ -153,7 +153,8 @@ return (
   <form className="form" onSubmit={handleSubmit}>
     <Navbar className="NewsProof-Logo" style={{background :"#B2FFF1"}} expand="lg  ">
       <Navbar.Brand>
-      <img src ={Logo} style={{height:"auto" ,width:"200px",marginLeft:"30%"}}></img>
+      <img src ={NLogo} style={{height:"45px" ,width:"auto",marginLeft:"60px"}}></img>
+      <img src ={Logo} style={{height:"auto" ,width:"250px",marginLeft:"10px"}}></img>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -178,6 +179,7 @@ return (
               <Card.Title>
                 <h1>ตรวจสอบข่าวสาร</h1>
               </Card.Title>
+              <img src ={NLogo} style={{height:"250px" ,width:"auto",marginTop:"30px",marginBottom:"20px"}}></img>
               </center>
             </Card.Body>
           </Card>
@@ -187,13 +189,13 @@ return (
 
 
         <Col md={4} style={{marginTop:"20px"}}>
-          <Card style={{ padding:"20px"}}>
-            <Card.Body>
+          <Card style={{ padding:"10px"}}>
+            <Card.Body style={{height:"450px"}}>
               <center>
               <br />
-              <Card.Title>
+              <Card.Title style={{height:"350px"}}>
                 <h5 style={{marginBottom:"20px"}}>กรุณาระบุรายละเอียดข่าวสาร</h5>
-                <textarea placeholder="เนื้อหาข่าว" value={news} onChange={(e) => setNews(e.target.value)} required style={{ height:"295px",width:"100%",textAlign:"center"}}></textarea>
+                <textarea placeholder="เนื้อหาข่าว" value={news} onChange={(e) => setNews(e.target.value)} required style={{ height:"85%",width:"100%",textAlign:"center"}}></textarea>
               </Card.Title>
               <Button type="submit" style={{ background: loader ? "#ccc" : "#3F89F3" ,width:"200px",height:"50px"}}>ส่ง</Button>
               </center>
@@ -207,7 +209,9 @@ return (
         <Col md={4} style={{marginTop:"20px"}}>
           <Card style={{ padding:"2px"}}>
             <Card.Body>
-              <Card.Img variant="top" src={IMG1} style={{height:"460px"}}></Card.Img>
+              <center>
+              <Card.Img variant="top" src={IMG1} style={{height:"433px",width:"90%"}}></Card.Img>
+              </center>
             </Card.Body>
           </Card>
         </Col>

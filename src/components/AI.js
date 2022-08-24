@@ -133,7 +133,6 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
         return(
         <div className="div">
             {/* <h3>ผลลัพธ์</h3>
-
             <p1>
             <center>
             <div style={{ width: 200, height: 200}}>
@@ -149,10 +148,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
             </div>
             </center>
             </p1>
-
-
             <h4 style={{color:TCL}}>{predict}</h4>
-
             <p>
             <h5>เนื้อหาข่าว</h5><h6>{News}</h6>
             </p>
