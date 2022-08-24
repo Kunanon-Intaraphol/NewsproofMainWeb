@@ -176,7 +176,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
           </Card>
         </Col>
 
-
+ 
 
 
         <Col md={4} style={{marginTop:"20px"}}>
