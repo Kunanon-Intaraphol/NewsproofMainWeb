@@ -29,15 +29,10 @@ const Read = () => {
 
     return (
         <div>
-            {/* <div style={{backgroundColor:"#AFD0FF"}}>
-            <center>
-            <img src ={Logo}  style={{height:"60px"}}></img>
-            </center>
-            </div> */}
             
             <Navbar className="NewsProof-Logo" style={{background :"#B2FFF1"}} expand="lg  ">
       <Navbar.Brand>
-      <img src ={NLogo} style={{height:"45px" ,width:"auto",marginLeft:"60px"}}></img>
+      <img src ={NLogo} style={{height:"45px" ,width:"auto",marginLeft:"10%"}}></img>
       <img src ={Logo} style={{height:"auto" ,width:"250px",marginLeft:"10px"}}></img>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -45,6 +40,14 @@ const Read = () => {
         <div className="me-auto"></div>
         <Nav>
           <Nav.Link href="https://www.antifakenewscenter.com" target="_blank"><h11 style={{marginLeft:"20px",marginRight:"20px"}}>Anti-Fake News Center Thailand</h11></Nav.Link>
+          <Button style={{    
+        width: "100px",
+        height: "45px",
+        textColor:"#FFFFFF",
+        backgroundColor: '#3F89F3',
+        borderRadius:'10px',
+        marginRight:"10px"
+        }} onClick={() => window.location.reload(false)}>Reload</Button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -190,7 +193,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
               <Card.Title>
                 <h1>ตรวจสอบข่าวสาร</h1>
                 <div style={{ width: 220, height: 220,marginTop:"30px",marginBottom:"20px"}}>
-                 <CircularProgressbar value={perpre}  text={`${perpre}%`} circleRatio={0.75} circleRatio={0.75} styles={buildStyles({
+                 <CircularProgressbar value={perpre}  text={`${perpre}%`} circleRatio={0.75} styles={buildStyles({
                     rotation: 1 / 2 + 1 / 8,
                     textColor:TCL,
                     width: "150px", 
@@ -285,23 +288,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
         
             <center>
                 <div className="div">
-    <p3 style={{fontSize: '20px'}}>โปรดรอสักครู่ ...ระบบกำลังประมวลผล... กรุณากดปุ่มเพื่อรับคำตอบ</p3>   
-
-    <button style={{    
-        width: "250px",
-        height: "60px",
-        color: "#ebedf1",
-        backgroundColor: '#3F89F3',
-        fontSize:'20px',
-        borderRadius:'10px',
-        position:"absolute",
-        top:"30%",
-        left:"43%"
-        }}
-        onClick={() => window.location.reload(false)}
-        >
-        กดเพื่อรับผลคำตอบ
-    </button>
+    <h5 style={{fontSize: '20px',marginTop:"40px",marginBottom:"40px"}}>โปรดรอสักครู่ ...ระบบกำลังประมวลผล... กรุณากดปุ่มเพื่อรับคำตอบ</h5>   
                 </div>
             </center>
            
