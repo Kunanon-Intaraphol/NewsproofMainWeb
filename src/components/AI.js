@@ -100,6 +100,7 @@ const Read = () => {
 }
 
 const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
+    var firstPrint = false
 
     const data = []
     let lengthonlyST =  onlyST.length;
@@ -141,51 +142,13 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
 
         return(
         <div className="div">
-            {/* <h3>ผลลัพธ์</h3>
-            <p1>
-            <center>
-            <div style={{ width: 200, height: 200}}>
-                 <CircularProgressbar value={perpre}  text={`${perpre}%`} circleRatio={0.75} circleRatio={0.75} styles={buildStyles({
-                    rotation: 1 / 2 + 1 / 8,
-                    textColor:TCL,
-                    width: "150px", 
-                    height: "150px",
-                    trailColor: "#909090",
-                    pathColor:PCL,
-                    })}
-                />
-            </div>
-            </center>
-            </p1>
-            <h4 style={{color:TCL}}>{predict}</h4>
-            <p>
-            <h5>เนื้อหาข่าว</h5><h6>{News}</h6>
-            </p>
             
-            <div className="AppTable">
-                <table> 
-                    <tr>
-                        <th>ประโยคที่มีความคล้ายที่จะเป็นข่าวปลอม</th>
-                        <th>%</th>
-                    </tr>
-                    {data.map((val, key) => {
-                    if(fai>TAI){
-                        return (
-                            <tr key={key}>
-                                <td>{val.gender}</td>
-                                <td>{val.name}</td>
-                            </tr>
-                        )
-                    }
-                    })}
-                </table>
-            </div> */}
 
 
 
 
 <Container style={{ padding :"20px" ,marginTop:"20px"}}>
-    <center>
+   
       <Row>
         <Col md={4} style={{marginTop:"20px"}}>
           <Card style={{ padding:"20px"}}>
@@ -230,39 +193,51 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
 
         
 
+        
+        
+
+        
+
 
         <Col md={4} style={{marginTop:"20px"}} >
-          <Card style={{ padding:"2px",border:"0px"}}>
+          <Card style={{ padding:"2px"}}>
             <Card.Body>
+            
             <div className="AppTable">
-                
+            
+            <table>
                     
                     {data.map((val, key) => {
+                    
                     if(fai>TAI){
-                        return (
-                            <table style={{border:"1px"}}> 
-                            <tr style={{border: "1px solid #3F89F3"}}>
-                                <th>ประโยคที่มีความคล้ายที่จะเป็นข่าวปลอม</th>
-                                <th style={{borderLeft: "1px solid #3F89F3",textAlign:"center"}}>%</th>
-                            </tr>
-                            
+                        if(firstPrint == false){
+                            firstPrint = true
+                            return(
+                                <tr style={{border: "1px solid #3F89F3"}}>
+                                    <th>ประโยคที่มีความคล้ายที่จะเป็นข่าวปลอม</th>
+                                    <th style={{borderLeft: "1px solid #3F89F3",textAlign:"center"}}>%</th>
+                                </tr>
 
-                            <tr key={key}>
-                                <td style={{borderBottom: "1px solid #3F89F3"}}>{val.gender}</td>
-                                <td style={{borderBottom: "1px solid #3F89F3", borderLeft: "1px solid #3F89F3"}}>{val.name}</td>
-                            </tr>
-                            </table>
-                        )
+                            )
+                        
+
+                        }
+                    return (
+                        <tr key={key}>
+                            <td style={{borderBottom: "1px solid #3F89F3"}}>{val.gender}</td>
+                            <td style={{borderBottom: "1px solid #3F89F3", borderLeft: "1px solid #3F89F3"}}>{val.name}</td>
+                        </tr>
+                    )
                     }
                     })}
-                    
-                
+            </table>             
             </div>
             </Card.Body>
           </Card>
         </Col>
+        
       </Row>
-      </center>
+      
     </Container>
 
 
@@ -291,7 +266,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
         
             <center>
                 <div className="div">
-    <h5 style={{fontSize: '20px',marginTop:"40px",marginBottom:"40px",marginLeft:"10%",marginRight:"10%"}}>โปรดรอสักครู่ ...ระบบกำลังประมวลผล...</h5>   
+    <h5 style={{fontSize: '20px',marginTop:"40px",marginBottom:"40px",marginLeft:"10%",marginRight:"10%"}}>โปรดรอสักครู่ ...ระบบกำลังประมวลผล... กรุณากดปุ่มเพื่อรับคำตอบ</h5>   
                 </div>
             </center>
            
