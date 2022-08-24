@@ -30,7 +30,7 @@ const Read = () => {
     return (
         <div>
             
-            <Navbar className="NewsProof-Logo" style={{background :"#B2FFF1"}} expand="lg  ">
+            <Navbar className="NewsProof-Logo" style={{background :"#D6E5FF"}} expand="lg  ">
       <Navbar.Brand>
       <img src ={NLogo} style={{height:"45px" ,width:"auto",marginLeft:"10%"}}></img>
       <img src ={Logo} style={{height:"auto" ,width:"250px",marginLeft:"10px"}}></img>
@@ -45,7 +45,7 @@ const Read = () => {
         width: "100px",
         height: "45px",
         textColor:"#FFFFFF",
-        backgroundColor: '#3F89F3',
+        backgroundColor: '#5F93FF',
         borderRadius:'10px',
         marginRight:"10px",
         marginLeft:"20px"
