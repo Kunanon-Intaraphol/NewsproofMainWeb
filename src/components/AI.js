@@ -39,6 +39,7 @@ const Read = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <div className="me-auto"></div>
         <Nav>
+            
           <Nav.Link href="https://www.antifakenewscenter.com" target="_blank"><h11 style={{marginLeft:"20px",marginRight:"20px"}}>Anti-Fake News Center Thailand</h11></Nav.Link>
           <Button style={{    
         width: "100px",
@@ -46,8 +47,10 @@ const Read = () => {
         textColor:"#FFFFFF",
         backgroundColor: '#3F89F3',
         borderRadius:'10px',
-        marginRight:"10px"
+        marginRight:"10px",
+        marginLeft:"20px"
         }} onClick={() => window.location.reload(false)}>Reload</Button>
+      
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -55,7 +58,7 @@ const Read = () => {
             
             
             <center>
-            <h2 style={{marginTop:"20px"}}>โปรดใช้ดุลพินิจของท่านในการตัดสินใจ</h2>
+            <h2 style={{marginTop:"20px",marginLeft:"10%",marginRight:"10%"}}>โปรดใช้ดุลพินิจของท่านในการตัดสินใจ</h2>
             {/* <button style={{    
             width: "250px",
             height: "60px",
@@ -288,7 +291,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
         
             <center>
                 <div className="div">
-    <h5 style={{fontSize: '20px',marginTop:"40px",marginBottom:"40px"}}>โปรดรอสักครู่ ...ระบบกำลังประมวลผล... กรุณากดปุ่มเพื่อรับคำตอบ</h5>   
+    <h5 style={{fontSize: '20px',marginTop:"40px",marginBottom:"40px",marginLeft:"10%",marginRight:"10%"}}>โปรดรอสักครู่ ...ระบบกำลังประมวลผล...</h5>   
                 </div>
             </center>
            
