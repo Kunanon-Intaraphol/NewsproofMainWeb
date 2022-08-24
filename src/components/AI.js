@@ -4,7 +4,9 @@ import { CircularProgressbar , buildStyles} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import "./aroi.css";
 import Logo from './icons/LOGO.png'
+import NLogo from './icons/NLOGO.png'
 import { Button, Card , Row, Col, Container , Navbar, Nav, Jumbotron } from 'react-bootstrap'
+import { render, wait } from "@testing-library/react";
 
 const Read = () => {
     
@@ -34,17 +36,18 @@ const Read = () => {
             </div> */}
             
             <Navbar className="NewsProof-Logo" style={{background :"#B2FFF1"}} expand="lg  ">
-                <Navbar.Brand>
-                <img src ={Logo} style={{height:"auto" ,width:"200px",marginLeft:"30%"}}></img>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <div className="me-auto"></div>
-                    <Nav>
-                        <Nav.Link href="https://www.antifakenewscenter.com" target="_blank"><h11 style={{marginLeft:"20px",marginRight:"20px"}}>Anti-Fake News Center Thailand</h11></Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+      <Navbar.Brand>
+      <img src ={NLogo} style={{height:"45px" ,width:"auto",marginLeft:"60px"}}></img>
+      <img src ={Logo} style={{height:"auto" ,width:"250px",marginLeft:"10px"}}></img>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <div className="me-auto"></div>
+        <Nav>
+          <Nav.Link href="https://www.antifakenewscenter.com" target="_blank"><h11 style={{marginLeft:"20px",marginRight:"20px"}}>Anti-Fake News Center Thailand</h11></Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
 
             
             
@@ -186,7 +189,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
               <br />
               <Card.Title>
                 <h1>ตรวจสอบข่าวสาร</h1>
-                <div style={{ width: 200, height: 200,marginTop:"30px"}}>
+                <div style={{ width: 220, height: 220,marginTop:"30px",marginBottom:"20px"}}>
                  <CircularProgressbar value={perpre}  text={`${perpre}%`} circleRatio={0.75} circleRatio={0.75} styles={buildStyles({
                     rotation: 1 / 2 + 1 / 8,
                     textColor:TCL,
@@ -213,7 +216,7 @@ const Frame = ({News , Sentence , FAI ,Status ,TAI ,INTFAI,onlyST,STonlyP}) => {
               <br />
               <Card.Title>
                 <h5>เนื้อหาข่าว</h5>
-                <textarea value={News} style={{ height:"383px",width:"100%",textAlign:"center"}}></textarea>
+                <textarea value={News} style={{ height:"375px",width:"100%",textAlign:"center"}}></textarea>
               </Card.Title>
             </Card.Body>
           </Card>
