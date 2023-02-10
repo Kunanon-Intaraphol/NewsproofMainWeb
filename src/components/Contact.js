@@ -170,7 +170,7 @@ return (
       <h2 style={{ textAlign:"center"}}>NewsProof เว็ปไซต์คัดกรองข่าวสาร</h2>
       <br />
       <Row>
-        <Col md={4} style={{marginTop:"20px"}}>
+        <Col sm={4} style={{marginTop:"20px"}}>
           <Card style={{ padding:"20px"}}>
             <Card.Body>
               <center>
@@ -217,7 +217,7 @@ return (
         </Col>
       </Row>
     </Container>
-
+  
   </form>
 );
 };
